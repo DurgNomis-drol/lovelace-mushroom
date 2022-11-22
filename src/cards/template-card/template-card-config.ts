@@ -20,6 +20,7 @@ export type TemplateCardConfig = LovelaceCardConfig &
         picture?: string;
         multiline_secondary?: boolean;
         entity_id?: string | string[];
+        controls?: any;
     };
 
 export const templateCardConfigStruct = assign(
@@ -36,5 +37,6 @@ export const templateCardConfigStruct = assign(
         picture: optional(string()),
         multiline_secondary: optional(boolean()),
         entity_id: optional(union([string(), array(string())])),
+        controls: optional(string()),
     })
 );

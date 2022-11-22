@@ -25,6 +25,7 @@ import { computeRgbColor } from "../../utils/colors";
 import { registerCustomCard } from "../../utils/custom-cards";
 import { TEMPLATE_CARD_EDITOR_NAME, TEMPLATE_CARD_NAME } from "./const";
 import { TemplateCardConfig } from "./template-card-config";
+import "./controls/template-controls"
 
 registerCustomCard({
     type: TEMPLATE_CARD_NAME,
@@ -40,6 +41,7 @@ const TEMPLATE_KEYS = [
     "primary",
     "secondary",
     "picture",
+    "controls",
 ] as const;
 type TemplateKey = typeof TEMPLATE_KEYS[number];
 
@@ -122,6 +124,7 @@ export class TemplateCard extends MushroomBaseElement implements LovelaceCard {
         const primary = this.getValue("primary");
         const secondary = this.getValue("secondary");
         const picture = this.getValue("picture");
+        const controls = this.getValue("controls");
 
         const multiline_secondary = this._config.multiline_secondary;
 
@@ -162,6 +165,17 @@ export class TemplateCard extends MushroomBaseElement implements LovelaceCard {
                             .multiline_secondary=${multiline_secondary}
                         ></mushroom-state-info>
                     </mushroom-state-item>
+                    ${controls
+                        ? html`
+                          <div class="actions" ?rtl=${rtl}>
+                              <mushroom-template-buttons
+                                  .hass=${this.hass}
+                                  .controls=${controls}
+                                  .fill=${appearance.layout !== "horizontal"}
+                              ></mushroom-template-buttons>
+                          </div>
+                        `
+                        : null}
                 </mushroom-card>
             </ha-card>
         `;
@@ -307,6 +321,9 @@ export class TemplateCard extends MushroomBaseElement implements LovelaceCard {
                 mushroom-shape-icon {
                     --icon-color: rgb(var(--rgb-disabled));
                     --shape-color: rgba(var(--rgb-disabled), 0.2);
+                }
+                mushroom-template-buttons {
+                    flex: 1;
                 }
             `,
         ];
