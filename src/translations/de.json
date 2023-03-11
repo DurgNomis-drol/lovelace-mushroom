@@ -85,7 +85,9 @@
             },
             "title": {
                 "title": "Titel",
-                "subtitle": "Untertitel"
+                "subtitle": "Untertitel",
+                "title_tap_action": "Titel Tipp-Aktion",
+                "subtitle_tap_action": "Untertitel Tipp-Aktion"
             },
             "chips": {
                 "alignment": "Ausrichtung"
@@ -134,6 +136,14 @@
             "climate": {
                 "show_temperature_control": "Temperatursteuerung?",
                 "hvac_modes": "HVAC-Modi"
+            },
+            "number": {
+                "display_mode": "Anzeigemodus",
+                "display_mode_list": {
+                    "default": "Standard (Schieberegler)",
+                    "slider": "Schieberegler",
+                    "buttons": "Buttons"
+                }
             }
         },
         "chip": {

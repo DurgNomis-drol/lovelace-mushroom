@@ -4,6 +4,7 @@ import { classMap } from "lit/directives/class-map.js";
 import {
     actionHandler,
     ActionHandlerEvent,
+    blankBeforePercent,
     computeRTL,
     computeStateDisplay,
     handleAction,
@@ -108,7 +109,7 @@ export class HumidifierCard extends MushroomBaseCard implements LovelaceCard {
             this.hass.entities
         );
         if (this.humidity) {
-            stateDisplay = `${this.humidity} %`;
+            stateDisplay = `${this.humidity}${blankBeforePercent(this.hass.locale)}%`;
         }
 
         const rtl = computeRTL(this.hass);
