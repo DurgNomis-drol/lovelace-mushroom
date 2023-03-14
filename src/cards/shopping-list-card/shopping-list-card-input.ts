@@ -45,13 +45,15 @@ export class ShoppingListItemInput extends LitElement {
                     box-sizing: border-box;
                     padding: 0 1rem;
                     font-weight: 600;
+                    font-size: 120%;
                     color: var(--primary-text-color);
                     outline: none !important;
                     min-width: 0;
                     width: 100%;
                 }
                 .input:placeholder {
-                    font-weight: 600;
+                    font-weight: 500;
+                    font-size: 120%;
                     color: var(--secondary-text-color);
                 }
             `,

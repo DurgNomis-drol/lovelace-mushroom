@@ -103,6 +103,7 @@ export class ShoppingListItem extends LitElement {
                     background: transparent;
                     border: none;
                     font-weight: 500;
+                    font-size: 120%;
                     color: var(--primary-text-color);
                     overflow: hidden;
                     text-overflow: ellipsis;
