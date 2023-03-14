@@ -114,7 +114,7 @@ export class ShoppingListItem extends LitElement {
                 }
                 .input:focus {
                     background: rgba(var(--rgb-primary-text-color), 0.05);
-                    transition: background-color 280ms ease-in-out 1s;
+                    transition: background-color 280ms ease-in-out 0s;
                     border-radius: var(--control-border-radius);
                 }
             `,
