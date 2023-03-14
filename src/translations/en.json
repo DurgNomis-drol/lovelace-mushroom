@@ -137,6 +137,10 @@
                 "show_temperature_control": "Temperature control?",
                 "hvac_modes": "HVAC Modes"
             },
+            "dropdown": {
+                "default_open": "Default open",
+                "hide_arrow": "Hide arrow"
+            },
             "shopping_list": {
                 "add_item_placeholder": "Add item …",
                 "clear_completed": "Clear completed",

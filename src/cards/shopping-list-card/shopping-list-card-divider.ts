@@ -48,7 +48,7 @@ export class ShoppingListCardDivider extends LitElement {
                 .hr-start,
                 .hr-end {
                     height: 2px;
-                    background: rgba(var(--rgb-primary-text-color), 0.10);
+                    background: rgba(var(--rgb-primary-text-color), 0.05);
                     flex-shrink: 0;
                     border: none;
                     min-width: calc(var(--spacing) * 1);

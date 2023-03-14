@@ -62,12 +62,12 @@ export class ShoppingListItem extends LitElement {
                 .input-wrapper * {
                     box-sizing: border-box;
                     outline: none !important;
-                    border-bottom: 1px solid rgba(var(--rgb-primary-text-color), 0.10);
                 }
                 .input-wrapper {
                     display: flex;
                     align-items: center;
                     border-radius: var(--control-border-radius);
+                    border-top: 1px solid rgba(var(--rgb-primary-text-color), 0.05);
                 }
                 .input-wrapper.greyed-out .input {
                     color: var(--secondary-text-color); // #9b9b9b;
