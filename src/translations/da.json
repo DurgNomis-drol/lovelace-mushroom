@@ -130,6 +130,14 @@
             "climate": {
                 "show_temperature_control": "Temperatur kontrol?",
                 "hvac_modes": "HVAC-tilstande"
+            },
+            "shopping_list": {
+                "add_item_placeholder": "Tilføj vare …",
+                "clear_completed": "Ryd færdiggjort",
+                "status": "{completed_count} ud af {total_count} færdiggjort",
+                "checked_icon": "Checked item icon",
+                "unchecked_icon": "Unchecked item icon",
+                "integration_missing": "'shopping_list' integration er ikke installeret."
             }
         },
         "chip": {
