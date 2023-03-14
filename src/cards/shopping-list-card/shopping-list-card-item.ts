@@ -67,7 +67,6 @@ export class ShoppingListItem extends LitElement {
                     display: flex;
                     align-items: center;
                     border-radius: var(--control-border-radius);
-                    border-top: 1px solid rgba(var(--rgb-primary-text-color), 0.05);
                 }
                 .input-wrapper.greyed-out .input {
                     color: var(--secondary-text-color); // #9b9b9b;
@@ -102,6 +101,7 @@ export class ShoppingListItem extends LitElement {
                     height: 42px;
                     min-width: 0;
                     background: transparent;
+                    box-sizing: border-box;
                     border: none;
                     font-weight: 500;
                     font-size: 115%;
@@ -109,6 +109,11 @@ export class ShoppingListItem extends LitElement {
                     overflow: hidden;
                     text-overflow: ellipsis;
                     margin-right: var(--spacing);
+                }
+                .input:focus {
+                    background: rgba(var(--rgb-primary-text-color), 0.05);
+                    transition: background-color 280ms ease-in-out 0s;
+                    border-radius: 2px;
                 }
             `,
         ];
