@@ -62,6 +62,7 @@ export class ShoppingListItem extends LitElement {
                 .input-wrapper * {
                     box-sizing: border-box;
                     outline: none !important;
+                    border-bottom: 1px solid rgba(var(--rgb-primary-text-color), 0.10);
                 }
                 .input-wrapper {
                     display: flex;
@@ -103,7 +104,7 @@ export class ShoppingListItem extends LitElement {
                     background: transparent;
                     border: none;
                     font-weight: 500;
-                    font-size: 120%;
+                    font-size: 115%;
                     color: var(--primary-text-color);
                     overflow: hidden;
                     text-overflow: ellipsis;

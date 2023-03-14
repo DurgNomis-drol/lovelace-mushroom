@@ -53,7 +53,7 @@ export class ShoppingListItemInput extends LitElement {
                 }
                 .input:placeholder {
                     font-weight: 500;
-                    font-size: 120%;
+                    font-size: 115%;
                     color: var(--secondary-text-color);
                 }
             `,
