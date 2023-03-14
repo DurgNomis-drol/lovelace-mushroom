@@ -1,6 +1,7 @@
 const DOMAIN_TO_ROW_TYPE = {
     alert: "toggle",
     automation: "toggle",
+    binary_sensor: "sensor",
     climate: "climate",
     cover: "cover",
     fan: "toggle",

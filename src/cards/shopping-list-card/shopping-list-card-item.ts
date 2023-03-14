@@ -90,6 +90,7 @@ export class ShoppingListItem extends LitElement {
                     appearance: none;
                     cursor: pointer;
                     margin: 0;
+                    color: rgba(var(--rgb-primary-text-color), 0.50);
                 }
                 .checkbox-icon {
                     width: 24px;
@@ -99,6 +100,7 @@ export class ShoppingListItem extends LitElement {
                 .input {
                     flex: 1;
                     height: 42px;
+                    padding: 0 1rem;
                     min-width: 0;
                     background: transparent;
                     box-sizing: border-box;
@@ -112,8 +114,8 @@ export class ShoppingListItem extends LitElement {
                 }
                 .input:focus {
                     background: rgba(var(--rgb-primary-text-color), 0.05);
-                    transition: background-color 280ms ease-in-out 0s;
-                    border-radius: 2px;
+                    transition: background-color 280ms ease-in-out 1s;
+                    border-radius: var(--control-border-radius);
                 }
             `,
         ];
