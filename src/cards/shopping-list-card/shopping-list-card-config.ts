@@ -10,6 +10,7 @@ export type ShoppingListCardConfig = LovelaceCardConfig &
     AppearanceSharedConfig & {
         name?: string;
         icon?: string;
+        icon_color?: string;
         checked_icon?: string;
         unchecked_icon?: string;
     };
@@ -20,6 +21,7 @@ export const shoppingListCardConfigStruct = assign(
     object({
         name: optional(string()),
         icon: optional(string()),
+        icon_color: optional(string()),
         checked_icon: optional(string()),
         unchecked_icon: optional(string()),
     })

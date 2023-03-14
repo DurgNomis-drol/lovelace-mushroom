@@ -3,6 +3,7 @@ import { css, CSSResultGroup, html, PropertyValues, TemplateResult } from "lit";
 import { customElement, query, state } from "lit/decorators.js";
 import { repeat } from "lit/directives/repeat.js";
 import { classMap } from "lit/directives/class-map.js";
+import { styleMap } from "lit/directives/style-map.js";
 import { computeRTL, LovelaceCard, LovelaceCardEditor } from "../../ha";
 import "../../shared/badge-icon";
 import "../../shared/button";
@@ -16,6 +17,7 @@ import "./shopping-list-card-divider";
 import "./shopping-list-card-input";
 import { computeAppearance } from "../../utils/appearance";
 import { MushroomBaseCard } from "../../utils/base-card";
+import { computeRgbColor } from "../../utils/colors";
 import { cardStyle } from "../../utils/card-styles";
 import { registerCustomCard } from "../../utils/custom-cards";
 import {
@@ -131,12 +133,7 @@ export class ShoppingListCard extends MushroomBaseCard implements LovelaceCard {
                             primaryState || secondaryState
                                 ? html`
                                       <mushroom-state-item ?rtl=${rtl} .appearance=${appearance}>
-                                          ${icon
-                                              ? html`<mushroom-shape-icon
-                                                    slot="icon"
-                                                    .icon=${icon}
-                                                ></mushroom-shape-icon>`
-                                              : html``}
+                                          ${this.renderIcon(icon)}
                                           <mushroom-state-info
                                               slot="info"
                                               .primary=${primaryState}
@@ -243,6 +240,23 @@ export class ShoppingListCard extends MushroomBaseCard implements LovelaceCard {
         }
     }
 
+    renderIcon(icon: string): TemplateResult {
+        const iconStyle = {};
+        const iconColor = this._config?.icon_color;
+        if (iconColor) {
+            const iconRgbColor = computeRgbColor(iconColor);
+            iconStyle["--icon-color"] = `rgb(${iconRgbColor})`;
+            iconStyle["--shape-color"] = `rgba(${iconRgbColor}, 0.2)`;
+        }
+        return html`
+            <mushroom-shape-icon
+                slot="icon"
+                .icon=${icon}
+                style=${styleMap(iconStyle)}
+            ></mushroom-shape-icon>
+        `;
+    }
+
     static get styles(): CSSResultGroup {
         return [
             super.styles,
@@ -263,6 +277,10 @@ export class ShoppingListCard extends MushroomBaseCard implements LovelaceCard {
                 }
                 .new-item-input {
                     flex: 1;
+                }
+                mushroom-shape-icon {
+                    --icon-color: rgb(var(--rgb-state-entity));
+                    --shape-color: rgba(var(--rgb-state-entity), 0.2);
                 }
             `,
         ];

@@ -21,6 +21,14 @@ const schema = [
         type: "grid",
         name: "",
         schema: [
+            { name: "icon", selector: { icon: {} } },
+            { name: "icon_color", selector: { "mush-color": {} } },
+        ],
+    },
+    {
+        type: "grid",
+        name: "",
+        schema: [
             { name: "layout", selector: { "mush-layout": {} } },
             { name: "primary_info", selector: { "mush-info": {} } },
             { name: "secondary_info", selector: { "mush-info": {} } },
